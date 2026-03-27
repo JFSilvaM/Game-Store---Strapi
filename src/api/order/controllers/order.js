@@ -1,5 +1,5 @@
 "use strict";
-const stripe = require("stripe")("");
+const stripe = require("stripe")(strapi.config.get("stripe.stripe.secretKey"));
 
 function calcDiscountPrice(price, discount) {
   if (!discount) return price;
